@@ -1,0 +1,140 @@
+//Slider with center item biggest than other items and arrow
+.slider__second {
+    position: relative;
+    width: 90%;
+    max-height: 480px;
+    padding-bottom: 66px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+  
+    @include media("<=880px") {
+      padding-bottom: 40px;
+    }
+  
+    @include media("<=604px") {
+      width: 100%;
+    }
+  
+    .slick-list {
+      z-index: 10;
+  
+      .slick-track {
+        .slick-slide {
+          margin: 0 10px;
+  
+          &.slick-center {
+            .slide {
+              width: 870px;
+              padding: 0;
+              transform: scale(1.2);
+  
+              @include media("<=880px") {
+                transform: scale(1);
+              }
+  
+              @include media("<=604px") {
+                width: 100%
+              }
+  
+            }
+          }
+  
+          .slide {
+            transition: 0.3s ease-in;
+          }
+        }
+      }
+  
+      .slide {
+        padding: 40px;
+        @include gpu;
+  
+        .slide__img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  
+  .slick-arrow {
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    font-size: 0;
+    cursor: pointer;
+  }
+  
+  .slick-prev {
+    width: 30px;
+    height: 30px;
+    left: 46%;
+    margin-right: 60px;
+    background-image: url("../img/icons/right-arrow.svg");
+    background-position: 45% 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease 0s;
+  
+    @include media("<=880px") {
+      left: 40%;
+    }
+  }
+  
+  .slick-next {
+    width: 30px;
+    height: 30px;
+    right: 46%;
+    background-image: url("../img/icons/left-arrow.svg");
+    background-position: 55% 45%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 3px;
+    list-style: none;
+    text-align: center;
+  
+    li {
+      display: inline-block;
+      position: relative;
+      width: 15px;
+      height: 15px;
+      margin: 0 5px;
+      padding: 0;
+      border-radius: 50%;
+      background-color: #b3b3b3;
+      cursor: pointer;
+  
+      button {
+        display: block;
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: transparent;
+        font-size: 0;
+        line-height: 0;
+        cursor: pointer;
+      }
+  
+      &.slick-active {
+        box-shadow: inset 0 0 5px 3px #000;
+      }
+    }
+  }
+  

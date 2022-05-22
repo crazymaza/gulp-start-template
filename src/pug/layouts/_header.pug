@@ -1,2 +1,26 @@
-header.page-header
-  h2 Page Header
+// Use mixin for nav menu
+// let logo='Logo text', let logoType='link', navItems={'Main':'/index.html'};
+// +navTop(logo, logoType, navItems)
+header.nav__top 
+  a.logo(href="/") Logo text
+  nav
+    ul.nav__list
+      li.list__item
+        a.item__link(href="#") First link
+      li.list__item
+        a.item__link(href="#") Second link
+      li.list__item
+        a.item__link(href="#") Third link
+    .nav__mobile 
+      span.mobile__btn
+      span.mobile__btn
+      span.mobile__btn
+      div.mobile__block
+        ul.nav__list
+          li.list__items
+            a.items__link(href="#") First link
+          li.list__items
+            a.items__link(href="#") Second link
+          li.list__items
+            a.items__link(href="#") Third link
+
