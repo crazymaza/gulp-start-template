@@ -1,0 +1,26 @@
+.vertical__text_right {
+  right: 7%;
+}
+
+.vertical__text_left {
+  left: 7%;
+}
+
+.vertical__text {
+  position: absolute;
+  top: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 0;
+
+  span {
+    font-style: normal;
+    font-weight: 700;
+    @include css-lock(100, 288, 375, 1440, font-size, px);
+    @include css-lock(100, 400, 375, 1440, line-height, px);
+    color: $color-body;
+    text-shadow: 0 0 2px $color-orange;
+  }
+}
