@@ -1,28 +1,52 @@
 // Header styles bgn
+/* critical:start */
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: $color-white;
+
+  &:visited {
+    color: $color-white;
+  }
+
+  .logo__text {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
 .nav__top {
-  position: absolute;
-  top: 10px;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: $nav-height;
   padding: 0 80px;
   flex-wrap: wrap;
   z-index: 100;
+  margin-bottom: 65px;
 
   @include media('<=tabletReg') {
     padding: 0 40px;
   }
 
+  @include media('>=desktopLarge') {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   nav {
     .nav__list {
       display: flex;
-      gap: 110px;
+      gap: 40px;
       list-style: none;
+      padding: 0;
 
       @include media('<=tabletReg') {
-        gap: 70px;
+        gap: 20px;
       }
 
       @include media('<=tabletMid') {
@@ -32,17 +56,29 @@
       .list__item {
 
         .item__link {
-          font-style: normal;
-          font-weight: 500;
+          font-weight: 700;
           font-size: 16px;
-          line-height: 20px;
+          line-height: 120%;
           color: $color-white;
-          text-transform: uppercase;
           text-decoration: none;
-          transition: .3s ease;
+          @include transition(all, 0.3s);
 
           &:hover {
-            color: lighten($color-orange, 10);
+            color: lighten($color-pink, 10);
+          }
+        }
+
+        &:last-child {
+          .item__link {
+            color: $color-pink;
+            padding: 15px 24px;
+            background: lighten($color-black, 8);
+            border-radius: 56px;
+
+            &:hover {
+              color: $color-white;
+              background: $color-pink;
+            }
           }
         }
       }
@@ -57,6 +93,7 @@
       height: 30px;
       margin-right: 20px;
       overflow: hidden;
+      cursor: pointer;
 
       @include media('<=tabletMid') {
         display: block;
@@ -65,7 +102,8 @@
 
       &.active {
         position: fixed;
-        top: 10px;
+        top: 3%;
+        right: 5%;
 
         .mobile__btn {
           &:nth-of-type(1) {
@@ -125,7 +163,7 @@
         transform: translateX(100%);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        background: darken($color-orange, 20);
+        background: $color-black;
         transition: transform 0.5s;
         will-change: transform;
 
@@ -151,5 +189,5 @@
     }
   }
 }
-
+/* critical:end */
 // Header styles end

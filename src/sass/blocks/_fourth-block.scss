@@ -1,0 +1,127 @@
+.block__content {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @include media('<=828px') {
+    flex-wrap: wrap-reverse;
+    gap: 50px;
+    justify-content: center;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    &__social {
+      display: flex;
+      gap: 32px;
+
+      a {
+        &:hover {
+          color: $color-white;
+
+          svg {
+            opacity: 1;
+          }
+        }
+
+        svg {
+          width: 32px;
+          height: 32px;
+          mix-blend-mode: luminosity;
+          opacity: 0.8;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    &__slogan {
+      margin: 0;
+      max-width: 460px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 34px;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .links {
+        &__point {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        &__tel,
+        &__email {
+          text-decoration: none;
+          color: $color-white;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 20px;
+          transition: all 0.3s ease;
+          width: fit-content;
+
+          &:hover {
+            color: $color-pink;
+          }
+        }
+      }
+    }
+  }
+
+  .join__form {
+    .section__title {
+      margin-bottom: 48px;
+    }
+
+    @include media('<=828px') {
+        .section__title {
+            text-align: center;
+        }
+      }
+    @include media('<=484px') {
+        width: 90%;
+      }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 50px;
+      row-gap: 50px;
+      max-width: 100%;
+
+      @include media('<=484px') {
+        grid-template-columns: 1fr;
+      }
+
+      input[type='text'],
+      input[type='email'] {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $color-white;
+        color: $color-white;
+        outline: none;
+        height: 30px;
+      }
+
+      input[type='email'] {
+        grid-column-start: 1;
+        grid-column-end: -1;
+      }
+
+      button {
+        max-width: 107px;
+        max-height: 50px;
+        @include media('<=484px') {
+            max-width: 100%;
+          }
+      }
+    }
+  }
+}

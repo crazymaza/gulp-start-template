@@ -3,26 +3,36 @@ mixin spacer
   |
 
 //Top nav
-//logo can be a single text
-//navItems is object {text : url}
+//-logo can be a single text
+//-navItems is object {text : url}
 mixin navTop(logo, logoType, navItems) 
   header.nav__top 
-    if logoType === 'link'
-      a.logo(href="/index.html")=logo
-    if logoType === 'img'
-      a.logo(href="/index.html")
-        img.logo__img(src=logo, alt="Logo")
-    nav
-      ul.nav__list
-        for text, url in navItems
-          li.list__item
-            a.item__link(href=url)=text
-      .nav__mobile 
-        span.mobile__btn
-        span.mobile__btn
-        span.mobile__btn
-        div.mobile__block
-          ul.nav__list
-            for text, url in navItems
-              li.list__item
-                a.item__link(href=url)=text
+      if logoType === 'link'
+        a.logo(href="/index.html")=logo
+      if logoType === 'img'
+        a.logo(href="/index.html")
+          img.logo__img(src=logo, alt="Logo")
+      if logoType === 'combo'
+        a.logo(href="/index.html")
+          .logo__wrapper
+            picture
+              img.logo__img(src=logo.src, alt="Logo")
+          span.logo__text=logo.text
+      nav
+        ul.nav__list
+          for item in navItems
+            li.list__item
+              a.item__link(href=item.url)=item.text
+        .nav__mobile  
+          span.mobile__btn
+          span.mobile__btn
+          span.mobile__btn
+          div.mobile__block
+            ul.nav__list
+              for item in navItems
+                li.list__item
+                  a.item__link(href=item.url)=item.text
+
+mixin imgPicture(logoSrc, logoAlt, logoClass)
+  picture
+    img(class=logoClass)(src=logoSrc, alt=logoAlt)

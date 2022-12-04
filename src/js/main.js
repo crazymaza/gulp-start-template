@@ -22,7 +22,13 @@ window.addEventListener('resize', setViewportProperty(document.documentElement))
 $(function () {
   // Load SVG-sprite on IE
   svg4everybody();
-
+  
+  const burger = $('.nav__mobile');
+  const burgerSpan = $('.mobile__btn');
+  burger.on('click', () => {
+    burger.toggleClass('active');
+    burgerSpan.toggleClass('active');
+  });
   // Micromodal example init
   // MicroModal.init({
   //   disableScroll: true,

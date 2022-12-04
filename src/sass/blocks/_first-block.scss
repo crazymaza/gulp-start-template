@@ -1,0 +1,73 @@
+/* critical:start */
+.first__block {
+  background-image: url(img/first-bg.webp);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  @include media('<=475px') {
+    height: 100%;
+    background-size: 200%;
+  }
+  
+
+  .small_container {
+    @include css-lock(5, 70, 320, 1170, padding-left, px);
+    @include css-lock(5, 70, 320, 1170, padding-right, px);
+
+    .title {
+      font-weight: 800;
+      @include css-lock(27, 80, 320, 1170, font-size, px);
+      line-height: 110%;
+      text-align: center;
+      letter-spacing: -0.04em;
+    }
+
+    .first__descr {
+      max-width: 770px;
+      margin-bottom: 20px;
+    }
+
+    .join-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #EAEAEA;
+      border-radius: 100px;
+      max-width: 500px;
+      margin-bottom: 350px;
+
+      @include media('<=475px') {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 200px;
+        border-radius: 20px;
+        width: 100%;
+      }
+
+      input {
+        padding: 25px 5px 25px 23.41px;
+        background: transparent;
+        border: none;
+        color: $color-white;
+        outline: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+
+        @include media('<=475px') {
+          border-bottom: 1px solid;
+          width: 90%;
+          margin: 0 auto;
+          padding-bottom: 5px;
+          padding-left: 0;
+        }
+      }
+      button {
+        @include media('<=475px') {
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}
+/* critical:end */

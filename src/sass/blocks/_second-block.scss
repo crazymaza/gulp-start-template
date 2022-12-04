@@ -1,0 +1,71 @@
+.second__block {
+  margin-top: 100px;
+  @include css-lock(100, 200, 320, 1170, margin-bottom, px);
+
+  .description {
+    @include css-lock(30, 46, 320, 1170, margin-bottom, px);
+  }
+
+  .content {
+    display: flex;
+    @include css-lock(5, 87.81, 1170, 320, gap, px);
+    align-items: center;
+
+    @include media('<=460px') {
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .block__img {
+      @include img(583.19px);
+
+      @include media('<=460px') {
+        max-width: 50%;
+        margin: 0 auto;
+      }
+    }
+
+    .content__text_join {
+      display: flex;
+      flex-direction: column;
+      @include css-lock(10, 48, 320, 1170, gap, px);
+      max-width: 497px;
+
+      p {
+        position: relative;
+        font-weight: 400;
+        @include css-lock(12, 18, 320, 1170, font-size, px);
+        line-height: 25px;
+        padding-left: 27px;
+        margin: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          display: block;
+          width: 5px;
+          height: 100%;
+          background-color: rgba(255, 139, 243, 0.6);
+          border-radius: 5px;
+        }
+
+        &.lighten {
+          font-weight: 700;
+
+          &::before {
+            background-color: $color-white;
+          }
+        }
+      }
+
+      button {
+        max-width: 202px;
+
+        @include media('<=460px') {
+          align-self: center;
+        }
+      }
+    }
+  }
+}

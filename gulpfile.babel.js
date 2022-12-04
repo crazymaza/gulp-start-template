@@ -30,6 +30,14 @@ gulp.task('clean', getTaskBuild('clean'));
 // Server task
 gulp.task('server', getTaskBuild('server'));
 
+// Jpg/png to WebP task
+gulp.task('images', getTaskBuild('images'));
+gulp.task('images:watch', getTaskBuild('images'));
+
+// Format HTML img tags
+gulp.task('html', getTaskBuild('html'));
+gulp.task('html:watch', getTaskBuild('html'));
+
 // Set production mode
 const setmodeProd = (done) => {
   config.setEnv('production');
@@ -45,10 +53,10 @@ const setmodeDev = (done) => {
 };
 
 // Build (production) task
-gulp.task('build', gulp.series(setmodeProd, 'clean', 'sass', 'js', 'sprite', 'copy', 'pug'));
+gulp.task('build', gulp.series(setmodeProd, 'clean', 'sass', 'js', 'sprite', 'copy', 'pug', 'images', 'html'));
 
 // Build (development) task
-gulp.task('build:dev', gulp.series(setmodeDev, 'clean', 'sass', 'js', 'sprite', 'copy', 'pug'));
+gulp.task('build:dev', gulp.series(setmodeDev, 'clean', 'sass', 'js', 'sprite', 'copy', 'pug', 'images', 'html'));
 
 // Watch task
 gulp.task(
