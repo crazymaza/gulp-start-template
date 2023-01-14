@@ -1,14 +1,16 @@
 /* critical:start */
 .first__block {
-  background-image: url(img/first-bg.webp);
+  background-image: url('../img/first-bg.png');
+  background-image: url('../img/first-bg.webp');
   background-position: bottom center;
   background-repeat: no-repeat;
   height: 100vh;
+
   @include media('<=475px') {
     height: 100%;
     background-size: 200%;
   }
-  
+
 
   .small_container {
     @include css-lock(5, 70, 320, 1170, padding-left, px);
@@ -62,6 +64,7 @@
           padding-left: 0;
         }
       }
+
       button {
         @include media('<=475px') {
           border-radius: 15px;
@@ -70,4 +73,5 @@
     }
   }
 }
+
 /* critical:end */

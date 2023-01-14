@@ -100,5 +100,8 @@
     "not UCAndroid > 0",
     "not ExplorerMobile > 0",
     "not kaios > 0"
-  ]
+  ],
+  "dependencies": {
+    "scrollreveal": "^4.0.9"
+  }
 }

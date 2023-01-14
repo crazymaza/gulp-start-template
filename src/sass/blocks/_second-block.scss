@@ -59,8 +59,22 @@
         }
       }
 
-      button {
-        max-width: 202px;
+      .join__link {
+        max-width: 200px;
+        background-color: $color-pink;
+        color: $color-white;
+        padding: 15px 24px;
+        background: lighten($color-black, 8);
+        border-radius: 56px;
+        text-decoration: none;
+        transition: 0.3s ease;
+        font-weight: 600;
+        font-size: 16px;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 1px 1px 10px lighten($color-pink, 5);
+        }
 
         @include media('<=460px') {
           align-self: center;

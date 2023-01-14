@@ -33,7 +33,9 @@ gulp.task('js:bundle', () =>
       //  - Slick slider (best carousel - https://kenwheeler.github.io/slick/)
       // `${config.nodeModules}/slick-carousel/slick/slick.js`,
       //  - Scroll to ID plugin (navigation on page - http://manos.malihu.gr/page-scroll-to-id/)
-      // `${config.nodeModules}/page-scroll-to-id/jquery.malihu.PageScroll2id.js`,
+      `${config.nodeModules}/page-scroll-to-id/jquery.malihu.PageScroll2id.js`,
+      //  - JavaScript library for easily animating elements as they enter/leave the viewpor(https://scrollrevealjs.org/)
+      `${config.nodeModules}/scrollreveal/dist/scrollreveal.js`,
     ])
     // error handler
     .on('error', config.errorHandler)

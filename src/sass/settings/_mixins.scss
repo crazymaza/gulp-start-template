@@ -5,18 +5,13 @@
 // $max-width: the screen width in $units where you want to lock in the $max-size
 // $property: the property of the element that you would like to scale/lock
 // $unit: the units which all measurements are taken in
-@mixin css-lock(
-  $min-size: 1,
+@mixin css-lock($min-size: 1,
   $max-size: 1.4,
   $min-width: 20,
   $max-width: 100,
   $property: font-size,
-  $unit: rem
-) {
-  #{$property}: calc(
-    #{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) /
-          (#{$max-width} - #{$min-width}))
-  );
+  $unit: rem) {
+  #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width})));
 
   @media (max-width: #{$min-width}#{$unit}) {
     #{$property}: #{$min-size}#{$unit};
@@ -43,13 +38,17 @@
 
 // center
 @mixin center($axis) {
-  @if $axis == both {
+  @if $axis==both {
     @include vcenter;
-  } @else if $axis == h {
+  }
+
+  @else if $axis==h {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  } @else if $axis == v {
+  }
+
+  @else if $axis==v {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -92,6 +91,7 @@
 // ol>li counter
 @mixin counter($var, $sep) {
   counter-reset: list + $var;
+
   li:before {
     content: counter(list + $var) $sep;
     counter-increment: list + $var;
@@ -115,6 +115,7 @@
   &:first-child {
     margin-top: 0;
   }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -124,6 +125,7 @@
 @mixin container-pad {
   padding-left: 16px;
   padding-right: 16px;
+
   @include media('>=tabletSmall', '<tabletReg') {
     padding-left: 58px;
     padding-right: 58px;
@@ -136,5 +138,16 @@
     max-width: $width;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@mixin web-kit-autofill {
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s;
+    transition-property: background-color, color;
   }
 }
